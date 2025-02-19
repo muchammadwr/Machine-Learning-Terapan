@@ -2,6 +2,7 @@
 
 ## Project Overview
 **Deskripsi Proyek**: Proyek ini bertujuan untuk membangun model neural network regresi linear yang dapat memprediksi konsumsi bahan bakar mobil (miles per gallon/miles per gallon) berdasarkan atribut-atribut seperti displacement, jumlah silinder, tenaga kuda, berat, akselerasi, tahun model, dan asal mobil. Dataset yang digunakan berasal dari repositori UCI Machine Learning, yang menyediakan data historis mengenai berbagai karakteristik mobil.
+
 **Pentingnya Proyek:** Memahami faktor-faktor yang memengaruhi konsumsi bahan bakar mobil sangat penting untuk berbagai tujuan, termasuk:
 1. **Pengambilan Keputusan Pembelian:** Calon pembeli mobil dapat menggunakan model ini untuk memilih kendaraan yang efisien dalam penggunaan bahan bakar, sehingga mengurangi biaya operasional jangka panjang.
 2. **Perencanaan Produksi Otomotif:** Produsen mobil dapat 2Lamemanfaatkan wawasan dari model ini untuk merancang kendaraan dengan efisiensi bahan bakar yang lebih baik, memenuhi permintaan pasar akan kendaraan ramah lingkungan.
