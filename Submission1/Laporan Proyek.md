@@ -7,6 +7,7 @@
 1. **Pengambilan Keputusan Pembelian:** Calon pembeli mobil dapat menggunakan model ini untuk memilih kendaraan yang efisien dalam penggunaan bahan bakar, sehingga mengurangi biaya operasional jangka panjang.
 2. **Perencanaan Produksi Otomotif:** Produsen mobil dapat 2Lamemanfaatkan wawasan dari model ini untuk merancang kendaraan dengan efisiensi bahan bakar yang lebih baik, memenuhi permintaan pasar akan kendaraan ramah lingkungan.
 3. **Kebijakan Lingkungan:** Pemerintah dan lembaga terkait dapat menggunakan hasil analisis ini untuk menetapkan regulasi emisi dan standar efisiensi bahan bakar, mendukung upaya pengurangan jejak karbon.
+
 **Referensi Terkait:**
 - Dalam penelitian yang diterbitkan di *Jurnal Komputasi* pada tahun 2022, penulis membahas penggunaan algoritma regresi linear untuk memprediksi harga mobil bekas berdasarkan berbagai atribut kendaraan. Hasil penelitian menunjukkan bahwa model regresi linear dapat memberikan estimasi harga yang akurat, dengan tingkat akurasi mencapai 76%. 
 EJOURNAL.JAK-STIK.AC.ID
