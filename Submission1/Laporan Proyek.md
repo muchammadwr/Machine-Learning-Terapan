@@ -27,51 +27,44 @@ JOURNAL.UNNES.AC.ID
 
 ### Solution statements
 Untuk memprediksi konsumsi bahan bakar mobil (mpg) berdasarkan atribut seperti displacement, jumlah silinder, tenaga kuda, berat, akselerasi, tahun model, dan asal mobil, berikut adalah tiga pendekatan yang dapat dipertimbangkan:
-- Regresi Linear : Pendekatan ini melibatkan penggunaan variabel independen untuk memprediksi variabel dependen. Misalnya, memodelkan hubungan antara berat kendaraan dan konsumsi bahan bakar. Meskipun sederhana, metode ini dapat memberikan wawasan awal mengenai pengaruh faktor tunggal terhadap mpg. 
 
-- Least Angle Regression (LARS): LARS adalah algoritma untuk fitting model regresi linear pada data berdimensi tinggi. Algoritma ini efektif dalam memilih variabel yang paling berpengaruh terhadap variabel dependen dan dapat menangani multikolinearitas dengan baik. LARS menghasilkan jalur solusi linear yang berguna dalam validasi silang atau penyesuaian model. 
-
-- Gradient Boosting Regressor: Algoritma ini membangun model aditif secara bertahap dengan mengoptimalkan fungsi kerugian yang dapat ditentukan. Setiap pohon regresi yang dibangun berfokus pada residual dari model sebelumnya, memungkinkan penyesuaian yang lebih baik terhadap data. Gradient Boosting Regressor efektif dalam menangani hubungan non-linear dan interaksi antar atribut. 
-
-Ketiga pendekatan ini dapat diimplementasikan menggunakan pustaka seperti TensorFlow dalam Python untuk membangun dan mengevaluasi model prediksi mpg.
+**Regresi Linear** 
+Pendekatan ini melibatkan penggunaan variabel independen untuk memprediksi variabel dependen. Misalnya, memodelkan hubungan antara berat kendaraan dan konsumsi bahan bakar. Meskipun sederhana, metode ini dapat memberikan wawasan awal mengenai pengaruh faktor tunggal terhadap mpg.
+Pendekatan ini diimplementasikan menggunakan pustaka Deep Learning Neural Network seperti TensorFlow dalam Python untuk membangun dan mengevaluasi model prediksi  
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
-
-Selanjutnya, uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
-
-Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data beserta insight atau exploratory data analysis.
+Dataset ini terdiri dari 9 kolom dan 398 baris dengan 6 nilai kosong. Sumber dataset: Auto MPG - UCI Machine Learning Repository. link https://archive.ics.uci.edu/dataset/9/auto+mpg
+Variabel-variabel pada Auto MPG dataset adalah sebagai berikut:
+- Car Name: Nama mobil yang mencakup merek dan model.
+- Cylinders: Jumlah silinder dalam mesin mobil.
+- Displacement: Volume total dari semua silinder dalam satuan cubic inches (inci kubik).
+- Horsepower: Tenaga mesin mobil yang diukur dalam horsepower (HP).
+- Weight: Berat kendaraan dalam satuan pounds (lbs).
+- Acceleration: Waktu yang dibutuhkan mobil untuk mencapai kecepatan 60 mph dari keadaan diam (dalam detik).
+- Model Year: Tahun produksi mobil.
+- Origin: Asal negara manufaktur mobil (1: USA, 2: Eropa, 3: Japan).
+- MPG (Miles Per Gallon): Efisiensi bahan bakar, yang menunjukkan jarak yang dapat ditempuh mobil dalam satu galon bahan bakar.
 
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+### Menghapus kolom yang tidak diperlukan
+- Menghapus kolom seperti nama mobil karena tidak akan digunakan dalam pelatihan model
+- mengubah tipe data kategorikal menjadi numerikal pada kolom origin guna untuk membuat model 
+- membagi dataset menjadi 2 yaitu training dan testing
+- Memisahkan antara variabel fitur dan labels
+- menormalisasi fitur menggunakan library tensorflow
+- membandingkan antara sebelum dan sesudah dinormalisasi
 
 ## Modeling
-Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menyajikan dua solusi rekomendasi dengan algoritma yang berbeda.
-- Menjelaskan kelebihan dan kekurangan dari solusi/pendekatan yang dipilih.
+Membuat model deep neural network mengguanakan framework TensorFlow dengan loss mae dan optimizer Adam dengan learning rate 0.001
 
 ## Evaluation
-Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+Dalam proses analisis menggunakan model regresi, hasil error yang diperoleh adalah 1.7, yang mencerminkan tingkat perbedaan antara nilai prediksi dan nilai aktual dalam dataset, sehingga dapat dievaluasi lebih lanjut untuk meningkatkan akurasi model yang digunakan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
 
 **---Ini adalah bagian akhir laporan---**
+Kesimpulan dengan algoritma Neural network telah didapat model yang memiliki tingkat error 1.7.
+Dari hasil analisis juga korelasi didapatkan bahwa Cylinders, Displacement, Horse power, dan Weight memiliki pengaruh terhadap penggunaan bahan bakar
 
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
